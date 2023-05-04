@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 13:35:49 by gt-serst          #+#    #+#             */
-/*   Updated: 2023/01/06 14:56:20 by gt-serst         ###   ########.fr       */
+/*   Updated: 2023/05/04 19:37:53 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	size;
 	char	*substr;
 
+	if (!s)
+		return (NULL);
 	if (s[0] == '\0' || start > (unsigned int)ft_strlen(s))
 	{
 		substr = malloc(sizeof(char) * 1);
