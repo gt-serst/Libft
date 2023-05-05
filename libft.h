@@ -13,8 +13,14 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1000
+# endif
+
 # include <stdlib.h>
 # include <unistd.h>
+# include <fcntl.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -109,5 +115,23 @@ char			*ft_substr(char const *s, unsigned int start, size_t len);
 int				ft_tolower(int c);
 
 int				ft_toupper(int c);
+
+/*			GET_NEXT_LINE			*/
+char			*get_next_line(int fd);
+
+int			ft_strchr_mod(char *s, int c);
+
+char			*ft_strjoin_mod(char *s1, char *s2);
+
+/*			FT_PRINTF			*/
+int			ft_printf(const char *format, ...);
+
+int			ft_printchar(char c);
+
+int			ft_printstr(char *s);
+
+int			ft_print_address(unsigned long nbr, char *base);
+
+int			ft_printnbr_base(long nbr, char *base);
 
 #endif
