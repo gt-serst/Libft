@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 16:25:50 by gt-serst          #+#    #+#             */
-/*   Updated: 2023/06/07 10:27:21 by gt-serst         ###   ########.fr       */
+/*   Updated: 2023/06/07 10:30:02 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ typedef struct s_list
 }		t_list;
 
 int				ft_atoi(const char *str);
+
+long long		ft_atol(const char *str);
 
 void			ft_bzero(void *s, size_t n);
 
