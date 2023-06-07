@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 16:25:50 by gt-serst          #+#    #+#             */
-/*   Updated: 2023/06/07 10:30:02 by gt-serst         ###   ########.fr       */
+/*   Updated: 2023/06/07 10:47:58 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,11 @@ char			*ft_substr(char const *s, unsigned int start, size_t len);
 int				ft_tolower(int c);
 
 int				ft_toupper(int c);
+
+void			ft_free_malloc(char **str);
+
+/*			ERROR HANDLING			*/
+void			ft_error(char *s);
 
 /*			GET_NEXT_LINE			*/
 char			*get_next_line(int fd);
