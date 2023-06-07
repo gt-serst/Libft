@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printnbr_base.c                                 :+:      :+:    :+:   */
+/*   print_address.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/16 11:35:19 by gt-serst          #+#    #+#             */
-/*   Updated: 2023/02/24 12:09:25 by gt-serst         ###   ########.fr       */
+/*   Created: 2023/06/07 10:20:37 by gt-serst          #+#    #+#             */
+/*   Updated: 2023/06/07 10:24:11 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 
-static int	ft_check_base(char *base)
+#include "ft_printf.h"
+
+static int	check_base(char *base)
 {
 	int	i;
 	int	j;
@@ -39,36 +40,38 @@ static int	ft_check_base(char *base)
 	return (i);
 }
 
-static int	ft_convert_base(long nbr, char *base, int len_base)
+static int	convert_base(unsigned long nbr, char *base, int len_base,
+int print_length)
 {
-	int	print_length;
-
-	print_length = 0;
-	if (nbr < (long)len_base)
-		return (ft_printchar(base[nbr]));
-	print_length = ft_convert_base(nbr / len_base, base, len_base);
-	return (print_length + ft_convert_base(nbr % len_base, base, len_base));
+	if (nbr < (unsigned long)len_base)
+		return (printchar(base[nbr]));
+	print_length = convert_base(nbr / len_base, base, len_base,
+			print_length);
+	return (print_length + convert_base(nbr % len_base, base, len_base,
+			print_length));
 }
 
-int	ft_printnbr_base(long nbr, char *base)
+int	print_address(unsigned long nbr, char *base)
 {
 	int	len_base;
 	int	print_length;
 
 	len_base = ft_strlen(base);
 	print_length = 0;
-	if (ft_check_base(base))
+	print_length += printnbr_base(0, "0123456789");
+	print_length += printchar('x');
+	if (check_base(base))
 	{
 		if (nbr == 0)
-			print_length = ft_printchar(base[0]);
+			print_length += printchar(base[0]);
 		else if (nbr < 0)
 		{
-			print_length += ft_printchar('-');
+			print_length += printchar('-');
 			nbr = -nbr;
-			print_length += ft_convert_base(nbr, base, len_base);
+			print_length += convert_base(nbr, base, len_base, print_length);
 		}
 		else
-			print_length += ft_convert_base(nbr, base, len_base);
+			print_length += convert_base(nbr, base, len_base, print_length);
 	}
 	return (print_length);
 }

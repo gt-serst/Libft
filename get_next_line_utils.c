@@ -6,13 +6,23 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 13:01:12 by gt-serst          #+#    #+#             */
-/*   Updated: 2023/05/04 19:34:01 by gt-serst         ###   ########.fr       */
+/*   Updated: 2023/06/07 10:09:24 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line.h"
 
-int	ft_strchr_mod(char *s, int c)
+size_t	ft_strlen(char *s)
+{
+	size_t	tmp;
+
+	tmp = 0;
+	while (s[tmp] != '\0')
+		tmp++;
+	return (tmp);
+}
+
+int	strchr_mod(char *s, int c)
 {
 	int		tmp;
 	char	chr;
@@ -29,7 +39,54 @@ int	ft_strchr_mod(char *s, int c)
 		return (0);
 }
 
-char	*ft_strjoin_mod(char *s1, char *s2)
+char	*ft_strdup(const char *s1)
+{
+	int		tmp;
+	char	*ptr;
+
+	tmp = 0;
+	while (s1[tmp] != '\0')
+		tmp++;
+	ptr = malloc(sizeof(char) * (tmp + 1));
+	if (!ptr)
+		return (NULL);
+	tmp = 0;
+	while (s1[tmp] != '\0')
+	{
+		ptr[tmp] = s1[tmp];
+		tmp++;
+	}
+	ptr[tmp] = '\0';
+	return (ptr);
+}
+
+char	*ft_substr(char *s, unsigned int start, int len)
+{
+	int		tmp;
+	int		size;
+	char	*substr;
+
+	if (!s)
+		return (NULL);
+	if (s[0] == '\0' || start > (unsigned int)ft_strlen(s))
+	{
+		substr = ft_strdup("");
+		return (substr);
+	}
+	size = 0;
+	while (size < len && s[start + size] != '\0')
+		size++;
+	substr = (char *)malloc(sizeof(char) * (size + 1));
+	if (!substr)
+		return (NULL);
+	tmp = 0;
+	while (tmp < len && s[start])
+		substr[tmp++] = s[start++];
+	substr[tmp] = '\0';
+	return (substr);
+}
+
+char	*strjoin_mod(char *s1, char *s2)
 {
 	char	*str;
 	int		i;
