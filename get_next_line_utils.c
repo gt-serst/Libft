@@ -6,13 +6,13 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 13:01:12 by gt-serst          #+#    #+#             */
-/*   Updated: 2023/06/07 10:09:24 by gt-serst         ###   ########.fr       */
+/*   Updated: 2023/10/20 16:50:12 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
-size_t	ft_strlen(char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t	tmp;
 
@@ -60,10 +60,10 @@ char	*ft_strdup(const char *s1)
 	return (ptr);
 }
 
-char	*ft_substr(char *s, unsigned int start, int len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int		tmp;
-	int		size;
+	size_t	tmp;
+	size_t	size;
 	char	*substr;
 
 	if (!s)

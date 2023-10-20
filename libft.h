@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 16:25:50 by gt-serst          #+#    #+#             */
-/*   Updated: 2023/06/07 10:47:58 by gt-serst         ###   ########.fr       */
+/*   Updated: 2023/10/20 16:50:36 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,19 +126,19 @@ void			ft_error(char *s);
 /*			GET_NEXT_LINE			*/
 char			*get_next_line(int fd);
 
-int			strchr_mod(char *s, int c);
+int				strchr_mod(char *s, int c);
 
 char			*strjoin_mod(char *s1, char *s2);
 
 /*			FT_PRINTF			*/
-int			ft_printf(const char *format, ...);
+int				ft_printf(const char *format, ...);
 
-int			printchar(char c);
+int				printchar(char c);
 
-int			printstr(char *s);
+int				printstr(char *s);
 
-int			print_address(unsigned long nbr, char *base);
+int				print_address(unsigned long nbr, char *base);
 
-int			printnbr_base(long nbr, char *base);
+int				printnbr_base(long nbr, char *base);
 
 #endif

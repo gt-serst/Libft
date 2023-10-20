@@ -6,12 +6,11 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 10:20:37 by gt-serst          #+#    #+#             */
-/*   Updated: 2023/06/07 10:24:11 by gt-serst         ###   ########.fr       */
+/*   Updated: 2023/10/20 16:51:50 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include "ft_printf.h"
+#include "libft.h"
 
 static int	check_base(char *base)
 {

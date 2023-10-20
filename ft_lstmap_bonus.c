@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 16:48:12 by gt-serst          #+#    #+#             */
-/*   Updated: 2023/06/14 16:51:55 by gt-serst         ###   ########.fr       */
+/*   Updated: 2023/10/20 16:43:46 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,18 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*current;
 	t_list	*new;
+	void	*elem;
 
 	if (!lst || !f || !del)
 		return (NULL);
 	new = NULL;
 	while (lst)
 	{
-		current = ft_lstnew((*f)(lst->content));
+		elem = (*f)(lst->content);
+		current = ft_lstnew(elem);
 		if (!current)
 		{
+			(*del)(elem);
 			ft_lstclear(&new, del);
 			return (NULL);
 		}

@@ -6,11 +6,11 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 15:56:37 by gt-serst          #+#    #+#             */
-/*   Updated: 2023/06/07 10:16:21 by gt-serst         ###   ########.fr       */
+/*   Updated: 2023/10/20 16:46:50 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 static char	*get_bytes(int fd, char *stack)
 {
