@@ -6,7 +6,7 @@
 #    By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/30 15:48:39 by gt-serst          #+#    #+#              #
-#    Updated: 2023/11/03 11:08:46 by geraudtsers      ###   ########.fr        #
+#    Updated: 2023/11/03 14:50:49 by gt-serst         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SRCS			=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 					ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c \
 					ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c \
 					get_next_line.c get_next_line_utils.c ft_printf.c \
-					ft_print_address.c ft_print_str.c ft_print_char.c ft_print_nbrbase.c
+					ft_print_address.c ft_print_str.c ft_print_char.c ft_print_nbrbase.c\
+					ft_strcmp.c
 
 OBJS			= $(SRCS:.c=.o)
 
