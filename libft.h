@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
+/*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 16:25:50 by gt-serst          #+#    #+#             */
-/*   Updated: 2023/10/24 11:19:22 by gt-serst         ###   ########.fr       */
+/*   Updated: 2023/11/03 11:09:17 by geraudtsers      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,12 +134,12 @@ char			*strjoin_mod(char *s1, char *s2);
 /*			FT_PRINTF			*/
 int				ft_printf(const char *format, ...);
 
-int				printchar(char c);
+int				ft_print_char(char c);
 
-int				printstr(char *s);
+int				ft_print_str(char *s);
 
-int				print_address(unsigned long nbr, char *base);
+int				ft_print_address(unsigned long nbr, char *base);
 
-int				printnbr_base(long nbr, char *base);
+int				ft_print_nbrbase(long nbr, char *base);
 
 #endif

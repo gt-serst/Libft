@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+         #
+#    By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/30 15:48:39 by gt-serst          #+#    #+#              #
-#    Updated: 2023/10/20 16:52:04 by gt-serst         ###   ########.fr        #
+#    Updated: 2023/11/03 11:08:46 by geraudtsers      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,13 +17,15 @@ SRCS			=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 					ft_strchr.c ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c \
 					ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c \
 					ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c \
-					get_next_line.c get_next_line_utils.c ft_printf.c print_address.c \
-					printstr.c printchar.c printnbr_base.c
+					get_next_line.c get_next_line_utils.c ft_printf.c \
+					ft_print_address.c ft_print_str.c ft_print_char.c ft_print_nbrbase.c
+
 OBJS			= $(SRCS:.c=.o)
 
 BONUS			=	ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c \
 					ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c \
 					ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c
+
 BONUS_OBJS		= $(BONUS:.c=.o)
 
 CC				= gcc

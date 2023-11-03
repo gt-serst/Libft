@@ -3,39 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
+/*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 16:03:34 by gt-serst          #+#    #+#             */
-/*   Updated: 2023/10/20 16:50:55 by gt-serst         ###   ########.fr       */
+/*   Updated: 2023/11/03 11:06:55 by geraudtsers      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	print_format(va_list args, const char *format)
+static int	ft_print_format(va_list args, const char *format)
 {
 	int	print_length;
 
 	print_length = 0;
 	if (*format == 'c')
-		print_length += printchar(va_arg(args, int));
+		print_length += ft_print_char(va_arg(args, int));
 	else if (*format == '%')
-		print_length += printchar(*format);
+		print_length += ft_print_char(*format);
 	else if (*format == 's')
-		print_length += printstr(va_arg(args, char *));
+		print_length += ft_print_str(va_arg(args, char *));
 	else if (*format == 'p')
-		print_length += print_address(va_arg(args, unsigned long long),
+		print_length += ft_print_address(va_arg(args, unsigned long long),
 				"0123456789abcdef");
 	else if (*format == 'd' || *format == 'i')
-		print_length += printnbr_base(va_arg(args, int), "0123456789");
+		print_length += ft_print_nbrbase(va_arg(args, int), "0123456789");
 	else if (*format == 'u')
-		print_length += printnbr_base(va_arg(args, unsigned int),
+		print_length += ft_print_nbrbase(va_arg(args, unsigned int),
 				"0123456789");
 	else if (*format == 'x')
-		print_length += printnbr_base(va_arg(args, unsigned int),
+		print_length += ft_print_nbrbase(va_arg(args, unsigned int),
 				"0123456789abcdef");
 	else if (*format == 'X')
-		print_length += printnbr_base(va_arg(args, unsigned int),
+		print_length += ft_print_nbrbase(va_arg(args, unsigned int),
 				"0123456789ABCDEF");
 	return (print_length);
 }
@@ -54,10 +54,10 @@ int	ft_printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			print_length += print_format(args, format);
+			print_length += ft_print_format(args, format);
 		}
 		else
-			print_length += printchar(*format);
+			print_length += ft_print_char(*format);
 		format++;
 	}
 	va_end(args);

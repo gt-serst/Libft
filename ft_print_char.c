@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printstr.c                                         :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
+/*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/10 17:37:44 by gt-serst          #+#    #+#             */
-/*   Updated: 2023/10/20 16:46:29 by gt-serst         ###   ########.fr       */
+/*   Created: 2023/01/10 17:18:10 by gt-serst          #+#    #+#             */
+/*   Updated: 2023/11/03 11:05:43 by geraudtsers      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	printstr(char *s)
+int	ft_print_char(char c)
 {
-	int	print_length;
-	int	tmp;
-
-	if (!s)
-		return (write(1, "(null)", 6));
-	print_length = 0;
-	tmp = 0;
-	while (s[tmp] != '\0')
-		print_length += printchar(s[tmp++]);
-	return (print_length);
+	return (write(1, &c, 1));
 }
