@@ -6,7 +6,7 @@
 /*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 16:25:50 by gt-serst          #+#    #+#             */
-/*   Updated: 2023/11/03 11:09:17 by geraudtsers      ###   ########.fr       */
+/*   Updated: 2023/11/03 15:00:01 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,8 @@ size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t			ft_strlen(const char *s);
 
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+int				ft_strcmp(const char *s1, const char *s2);
 
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 
