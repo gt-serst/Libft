@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 11:19:45 by gt-serst          #+#    #+#             */
-/*   Updated: 2023/11/05 16:20:39 by gt-serst         ###   ########.fr       */
+/*   Updated: 2023/11/10 11:38:16 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int main()
 
     n = 10;
     ptr = ft_calloc(n, sizeof(int));
-    ptr = calloc(n, sizeof(int));
+    ptr = calloc(2147483646, sizeof(int));
     free(ptr);
     return (0);
 }
